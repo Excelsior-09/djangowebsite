@@ -1,0 +1,668 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Best Fixed Matches Service Worldwide</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <style>
+      html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline: 0;
+        vertical-align: baseline;
+        background: transparent;
+    }
+    article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+        display: block;
+    }
+    ol, ul {
+        list-style: none;
+    }
+    blockquote, q {
+        quotes: none;
+    }
+    blockquote:before, blockquote:after, q:before, q:after {
+        content: '';
+        content: none;
+    }
+    a {
+        color: #000000;
+    }
+    a:hover {
+        text-decoration: none;
+        transition:all 0.3s ease-in-out;
+    }
+    del {
+        text-decoration: line-through;
+    }
+    abbr[title], dfn[title] {
+        border-bottom: 1px dotted;
+        cursor: help;
+    }
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+    /* change border colour to suit your needs */
+    hr {
+        display: block;
+        height: 1px;
+        border: 0;
+        border-top: 1px solid #cccccc;
+        margin: 1em 0;
+        padding: 0;
+    }
+    a{
+        text-decoration: none;
+        color: #20263c;
+    }
+    a:hover{
+      color: #20263c;
+    }
+    img{
+      object-fit: cover;
+      vertical-align: middle;
+    }
+    input, select {
+        vertical-align: middle;
+    }
+    input[type=text]:focus, input[type=email]:focus,
+    input[type=password]:focus, select:focus,
+    textarea:focus, input[type=submit]:focus{
+      outline: 0;
+    }
+    input[type=text]::-webkit-input-placeholder, input[type=email]::-webkit-input-placeholder, textarea::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        color: #637381;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 20px;
+    }
+    input[type=text]::-moz-placeholder, input[type=email]::-moz-placeholder, textarea::-webkit-input-placeholder { /* Firefox 19+ */
+        color: #637381;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 20px;
+    }
+    input[type=text]:-ms-input-placeholder, input[type=email]:-ms-input-placeholder, textarea::-webkit-input-placeholder { /* IE 10+ */
+        color: #637381;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 20px;
+    }
+    input[type=text]:-moz-placeholder, input[type=email]:-moz-placeholder, textarea::-webkit-input-placeholder { /* Firefox 18- */
+        color: #637381;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 20px;
+    }
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+    body{
+        background: #000;
+        color: #fff;
+        font-size: 16px;
+        line-height: 30px;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 500;
+    }
+    h1,h2,h3,h4,h5,h6{
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+    }
+    h2{
+        font-size: 48px;
+        margin-bottom: 24px;
+    }
+    h3{
+        margin-bottom: 16px;
+    }
+    .color-black{
+        color: #000;
+    }
+    .color-white{
+        color: #fff;
+    }
+    .bg-grey{
+        background: #ebebeb;
+    }
+    .section-padding-t-100{
+        padding-top: 100px;
+    }
+    .section-padding{
+        padding: 100px 0;
+    }
+    
+    /*Header*/
+    .header .navbar{
+        padding: 25px 0;
+    }
+    .header .nav-link{
+        color: #fff;
+    }
+    .header .navbar-expand-lg .navbar-nav .nav-link{
+        padding: 0;
+    }
+    .header .navbar-expand-lg .navbar-nav .nav-item{
+        padding-left: 50px;
+    }
+    .header .navbar-expand-lg .navbar-nav .nav-item:first-child{
+        padding-left: 0;
+    }
+    /*Header*/
+    
+    /*Main*/
+    .section-counter .section-counter-content{
+        position: relative;
+    }
+    .section-counter .section-counter-content:after{
+        content: '';
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100px;
+        background-image: url('../images/arrow.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    .section-counter .col-md-4:last-child .section-counter-content:after{
+        display: none;
+    }
+    .section-counter .section-counter-content .count{
+        font-size: 70px;
+        line-height: 85px;
+        font-weight: 600;
+    }
+    .section-best-program h2,
+    .section-how-we-work h2,
+    .section-upcoming h2,
+    .section-our-clients h2,
+    .section-faq h2{
+        margin-bottom: 50px;
+        text-transform: uppercase;
+    }
+    .timeline {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 6px;
+      background-color: white;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -3px;
+    }
+    .timeline-container {
+      padding: 25px 75px;
+      position: relative;
+      background-color: inherit;
+      width: 50%;
+    }
+    .timeline-container::after {
+      content: '';
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      right: -12px;
+      background-color: white;
+      border: 4px solid #000;
+      top: 30px;
+      border-radius: 50%;
+      z-index: 1;
+    }
+    .timeline .left {
+      left: 0;
+    }
+    .timeline .right {
+      left: 50%;
+    }
+    .timeline .right::after {
+      left: -12px;
+    }
+    .timeline .content {
+      color: #000;
+    }
+    .section-upcoming .table tr th{
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 14px;
+        padding: 10px 0;
+        border: 0;
+    }
+    .section-upcoming .table tr td{
+        position: relative;
+        font-size: 32px;
+        padding: 40px 0;
+        border-right: 1px solid #ebebeb;
+    }
+    .section-upcoming .table tr td:last-child{
+        border: 0;
+    }
+    .section-upcoming .table tr td:after{
+        content: '';
+        background: #ebebeb;
+        height: 1px;
+        width: 250px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 0;
+    }
+    .section-upcoming .table tr:last-child td:after{
+        display: none;
+    }
+    .section-faq .accordion-button{
+        color: #fff;
+        background-color: transparent;
+        box-shadow: none;
+        padding: 24px 0;
+        font-size: 24px
+    }
+    .section-faq .accordion-body{
+        color: #fff;
+        font-weight: normal;
+        padding: 0;
+        padding-bottom: 24px;
+    }
+    .section-faq .accordion-item{
+        border-bottom:  2px solid #fff;
+        background-color: transparent;
+    }
+    .section-faq .accordion-button::after{
+        filter: brightness(0) invert(1);
+    
+    }
+    /*Main*/
+    
+    /*Footer*/
+    .footer{
+        position: relative;
+        padding-bottom: 50px;
+    }
+    .footer a{
+        color: #fff;
+    }
+    .footer .back-to-top{
+        position: absolute;
+        bottom: 50px;
+        right: 15px;
+    }
+    .footer h4{
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+    /*Footer*/
+    
+    /* media queries */
+    @media screen and (max-width: 600px) {
+      .timeline::after {
+        left: 31px;
+      }  
+      .timeline-container {
+          width: 100%;
+          padding-left: 70px;
+          padding-right: 25px;
+      }
+      .timeline-container::before {
+          left: 60px;
+          border: medium solid white;
+          border-width: 10px 10px 10px 0;
+          border-color: transparent white transparent transparent;
+      }
+      .timeline .left::after, .timeline .right::after {
+        left: 18px;
+      }
+    }
+    @media screen and (max-width: 767px){
+        h2{
+            font-size: 28px;
+        }
+        .section-padding{
+            padding: 50px 0;
+        }
+        .section-counter .section-counter-content:after{
+            display: none;
+        }
+        .section-counter .section-counter-content .count{
+            font-size: 48px;
+        }
+        .timeline .right{
+            left: 0;
+        }
+        .section-upcoming .table tr td{
+            font-size: 20px;
+            padding: 20px 0;
+        }
+        .section-upcoming .table tr td:after{
+            width: 50px;
+        }
+        .section-upcoming .table tr th{
+            font-size: 13px;
+        }
+        .section-faq .accordion-button{
+            font-size: 20px;
+        }
+        .footer .back-to-top {
+            bottom: 50px;
+            right: 10px;
+        }
+        .navbar-toggler{
+            border: 3px solid #fff;
+            padding: 10px;
+        }
+        .navbar-toggler-icon{
+            height: auto;
+            width: auto;
+            color: #fff;
+        }
+        .header .navbar-nav{
+            padding: 25px 0;
+        }
+        .header .navbar-expand-lg .navbar-nav .nav-item{
+            padding: 5px 0;
+            text-align: center;
+        }
+    }
+    @media screen and (max-width: 380px){}
+    </style>
+
+
+  </head>
+  <body id="top">
+
+    <!-- Header -->
+    <header id="main_header" class="header">
+      <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img src="{% static 'images/logo.png' %}" width="150" alt="logo" />
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon">MENU</span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#main_header">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#aboutus">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#deals">Deals</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#faqs">FAQs</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contact_us">Contact Us</a>
+              </li>
+              <li class="nav-item">  
+                <a class="nav-link" href="https://t.me/lucky_luciano_fixed" target="_blank" style="background-color:white; padding: 10px; border-radius: 10px; color: black;">
+                  <strong> Telegram </strong>   </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- Header -->
+
+    <!-- Banner -->
+    <section class="section-banner">
+      <div class="container-fluid p-0">
+        <div>
+          <img src="{% static 'images/banner-img.jpg' %}" class="img-fluid" alt="banner image" style="width: 100%;"/>
+        </div>
+      </div>
+    </section>
+    <!-- Banner -->
+
+    <!-- Main -->
+    <main class="main">
+      <section class="section-counter section-padding bg-grey color-black text-center">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="section-counter-content">
+                <div class="count">+500</div>
+                <p>SATISFIED CUSTOMERS</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="section-counter-content">
+                <div class="count">+3</div>
+                <p>YEAR IN THE ONION ROUTER</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="section-counter-content">
+                <div class="count">13</div>
+                <p>AVERAGE ODDS PER MATCH</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section-best-program section-padding">
+        <div class="container">
+          <h2 class="text-center">Our Best Program</h2>
+          <div>
+            <img src="{% static 'images/best-program.jpg' %}" class="img-fluid" alt="banner image" />
+          </div>
+        </div>
+      </section>
+      <section class="section-how-we-work section-padding bg-grey">
+        <div class="container">
+          <h2 class="color-black text-center">How We Work</h2>
+          <div class="timeline">
+            <div class="timeline-container left">
+              <div class="content">
+                <h3>Contact Us</h3>
+                <p>Email us or send a message in Telegran.</p>
+              </div>
+            </div>
+            <div class="timeline-container right">
+              <div class="content">
+                <h3>Clarify Details</h3>
+                <p>Write us with any question on the way to purchase. We will be happy to answer it!</p>
+              </div>
+            </div>
+            <div class="timeline-container left">
+              <div class="content">
+                <h3>Make a Payment</h3>
+                <p>Pay for information via tge cryptocurrency of you choice: Bitcoin, Etherium, USDT.</p>
+              </div>
+            </div>
+            <div class="timeline-container right">
+              <div class="content">
+                <h3>Get Your Match</h3>
+                <p>Get the match within 5 minutes of payment, follow our instructions, place your bet.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="deals" class="section-upcoming section-padding">
+        <div class="container">
+          <h2 class="text-center">Upcoming Deals</h2>
+          <table class="table table-borderless color-white text-center">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>ODDS</th>
+                <th>Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% if deals %}
+                {% for each_deal  in deals %}
+                  <tr>
+                    <td>{{each_deal.dt}}</td>
+                    <td>{{each_deal.odds}}</td>
+                    <td>${{each_deal.price}}</td>
+                  </tr>
+                {% endfor %}
+              {% endif %}
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section class="section-our-clients section-padding bg-grey">
+        <div class="container">
+          <h2 class="text-center color-black">Our Clients Results</h2>
+          <div class="row">
+            <div class="col-md-3">
+              <img src="{% static 'images/review1.jpg' %}" class="img-fluid" style="padding-bottom: 10px;" alt="review" />
+            </div>
+            <div class="col-md-3">
+              <img src="{% static 'images/review2.jpg' %}" class="img-fluid" style="padding-bottom: 10px;" alt="review" />
+            </div>
+            <div class="col-md-3">
+              <img src="{% static 'images/review3.jpg' %}" class="img-fluid" style="padding-bottom: 10px;" alt="review" />
+            </div>
+            <div class="col-md-3">
+              <img src="{% static 'images/review4.jpg' %}" class="img-fluid" style="padding-bottom: 10px;" alt="review" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="aboutus" class="section-about section-padding">
+        <div class="container">
+          <div class="section-about-content">
+            <h2 class="text-center">About Us</h2>
+            <p>Secrets abound in the world of fixed score matches – but at Lucky Luciano, we believe in being upfront and honest with our clients. With years of experience in the sports betting industry, we know what works and what doesn't. So if you're looking for the right team to help you beat the odds, look no further than Lucky Luciano. But be warned – once you've experienced the rush of winning with us, there's no going back.</p>
+          </div>
+        </div>
+      </section>
+      <section id="contact_us" class="section-about section-padding bg-grey">
+        <div class="container">
+          <div class="section-about-content color-black">
+            <h2 class="text-center">Contact Us</h2>
+            <p>If you have any questions or concerns about our services, please feel free to contact us via email at <strong> lucianohtft@gmail.com </strong> or through our Telegram ID <strong> @Lucianofixed </strong> . Our dedicated Customer Service team is available 24/7 to respond to your inquiries, and we strive to provide timely and accurate assistance to all our clients. Rest assured that we take all feedback seriously and will do our best to address any issues or concerns you may have. We aim to respond to all inquiries within minutes, so please don't hesitate to get in touch with us!</p>
+          </div>
+        </div>
+      </section>
+      <section id="faqs" class="section-faq section-padding">
+        <div class="container">
+          <h2 class="text-center">FAQ's</h2>
+          <div class="accordion" id="accordionPanelsStayOpenExample">
+            <div class="accordion-item">
+              <div class="accordion-header" id="panelsStayOpen-headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                  DO YOU HAVE ANY PROOFS?
+                </button>
+              </div>
+              <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+                <div class="accordion-body">
+                  Absolutely. Our Telegram channel @luckyluciano contains all the necessary proofs to demonstrate the accuracy and reliability of our services. Additionally, we offer encrypted matches and secure payments through an escrow system to ensure the safety and privacy of our clients' transactions. You can also take a look in the reviews section below.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <div class="accordion-header" id="panelsStayOpen-headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                  Why Can’t I pay after the match?
+                </button>
+              </div>
+              <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+                <div class="accordion-body">
+                  We do not accept payment after the match because it leaves us vulnerable to fraudulent activities. Since one person can write to us from multiple accounts, we may end up losing money if we do not receive payment before the match.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <div class="accordion-header" id="panelsStayOpen-headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                  What if the match fails?
+                </button>
+              </div>
+              <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+                <div class="accordion-body">
+                  Although we deal exclusively with 100% fixed matches, we understand that unexpected outcomes can sometimes occur. In the unlikely event that a match fails to produce the predicted result, we offer our clients two options: a full refund for the match and their original bet amount, or a free replacement match.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <div class="accordion-header" id="panelsStayOpen-headingFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
+                  Can I be banned for betting on fixed matches?
+                </button>
+              </div>
+              <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFour">
+                <div class="accordion-body">
+                  To be completely transparent, there is still a degree of risk involved in betting on fixed matches. However, we provide detailed instructions along with the match to help our clients minimize their risks and increase their chances of success.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <div class="accordion-header" id="panelsStayOpen-headingFive">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false" aria-controls="panelsStayOpen-collapseFive">
+                  How can I pay
+                </button>
+              </div>
+              <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFive">
+                <div class="accordion-body">
+                  We only accept payments in cryptocurrency, specifically BTC, USDT, ETH, and XRP. Once you have made the payment, simply send us a screenshot of the transaction via our Telegram channel.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <div class="accordion-header" id="panelsStayOpen-headingSix">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSix" aria-expanded="false" aria-controls="panelsStayOpen-collapseSix">
+                  What happens after I pay?
+                </button>
+              </div>
+              <div id="panelsStayOpen-collapseSix" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingSix">
+                <div class="accordion-body">
+                  Our Team will verify the payment and you’ll receive your fixed match in Telegram or Email Address within 5 minutes
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Main -->
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="footer-content">
+              <p><strong>TELEGRAM:</strong> LuckyLuciano</p>
+              <p><strong>EMAIL:</strong> <a href="mailto:lucyhtft@gmail.com" class="text-decoration-underline">lucyhtft@gmail.com</a></p>
+              <p class="mt-3">BEST FIXED MATCH SERVICE WORLDWIDE</p>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <h4>Contact Policy</h4>
+            <p>Our customer service team is available to assist you and will gladly help you understand how the entire process works. Please don't hesitate to contact us if you need any help.</p>
+          </div>
+        </div>
+        <div class="back-to-top">
+          <a href="#top"><img src="{% static 'images/back-to-top.png' %}" width="35" alt="icon" /></a>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>
